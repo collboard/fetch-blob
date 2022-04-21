@@ -16,7 +16,7 @@
         "test": "node --experimental-loader ./test/http-loader.js ./test/test-wpt-in-node.js",
         "report": "c8 --reporter json --reporter text npm run test",
         "coverage": "npm run report && codecov -f coverage/coverage-final.json",
-        "prepublishOnly": "tsc --declaration --emitDeclarationOnly --allowJs index.js from.js"
+        "postinstall": "tsc --declaration --emitDeclarationOnly --allowJs index.js from.js"
     },
     "repository": "https://github.com/node-fetch/fetch-blob.git",
     "keywords": [
