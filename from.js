@@ -1,11 +1,11 @@
-import { statSync, createReadStream, promises as fs } from 'node:fs'
-import { basename } from 'node:path'
-import DOMException from 'node-domexception'
+const { statSync, createReadStream, promises: fs } = require('node:fs');
+const { basename } = require('node:path');
+const DOMException = require('node-domexception');
 
-import File from './file.js'
-import Blob from './index.js'
+const { File } = require('./file.js');
+const { Blob } = require('./index.js');
 
-const { stat } = fs
+const { stat } = fs;
 
 /**
  * @param {string} path filepath on the disk
@@ -102,5 +102,5 @@ class BlobDataItem {
   }
 }
 
-export default blobFromSync
-export { File, Blob, blobFrom, blobFromSync, fileFrom, fileFromSync }
+module.exports = { File, Blob, blobFrom, blobFromSync, fileFrom, fileFromSync };
+

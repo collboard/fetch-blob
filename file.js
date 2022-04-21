@@ -1,4 +1,4 @@
-import Blob from './index.js'
+const { Blob } = require('./index.js');
 
 const _File = class File extends Blob {
   #lastModified = 0
@@ -45,5 +45,4 @@ const _File = class File extends Blob {
 }
 
 /** @type {typeof globalThis.File} */// @ts-ignore
-export const File = _File
-export default File
+module.exports = { File: _File };

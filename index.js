@@ -3,7 +3,7 @@
 // TODO (jimmywarting): in the feature use conditional loading with top level await (requires 14.x)
 // Node has recently added whatwg stream into core
 
-import './streams.cjs'
+require('./streams.cjs');
 
 // 64 KiB (same size chrome slice theirs blob into Uint8array's)
 const POOL_SIZE = 65536
@@ -250,5 +250,4 @@ Object.defineProperties(_Blob.prototype, {
 })
 
 /** @type {typeof globalThis.Blob} */
-export const Blob = _Blob
-export default Blob
+module.exports = { Blob: _Blob };
